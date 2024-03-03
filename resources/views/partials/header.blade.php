@@ -1,11 +1,10 @@
 <script data-cfasync="false" type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 <script>
-    var $a= $.noConflict(true);
-    $a(window).scroll(function(){
+    var $a = $.noConflict(true);
+    $a(window).scroll(function() {
         if ($a(window).scrollTop() >= 300) {
             $a('.cg-menu-below').addClass('fixed-header');
-        }
-        else {
+        } else {
             $a('.cg-menu-below').removeClass('fixed-header');
         }
     });
@@ -16,45 +15,84 @@
 <nav class="HeaderMenu">
     <div class="upper-Sec">
         <div class="container-fluid">
-         <div class="col-md-8">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> عضویت</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> ورود</a></li>
-            </ul>
-            <a href="{{ route('main.index2') }}" class="navbar-brand bran_bt" style="font-size: 30px">فروشگاه مصالح و تجهیزات ساختمانی </a>
-            <ul class="nav navbar-nav">
-                {{--                <li><a href="route('views.blog.index.blade.php')">Blog</a></li>--}}
-                {{--                <li><a href="{{ route('other.about') }}">about</a></li>--}}
-                <li><a href="{{route('main.index2')}}">صفحه اصلی</a></li>
-                <li><a href="{{route('Products.index')}}">محصولات</a></li>
-{{--                <li><a href="{{route('Online-Shopping.index')}}">فروشگاه</a></li>--}}
-                <li><a href="{{route('blog.index')}}">وبلاگ</a></li>
-                <li><a href="{{route('other.about')}}">درباره ما</a></li>
-                {{--                <li><a href="{!!   route('other.about')  !!}">About !! </a></li>--}}
-            </ul>
-         </div>
-        <div class="col-md-auto">
-            <img src="{{ asset('img/Logo/logo.png') }}" alt="" class="site-Brand">
+            <div class="col-md-8">
+                <ul class="navbar-right">
+                            <!-- Authentication Links -->
+                            <!-- <span class="glyphicon glyphicon-log-in"> -->
+                            @guest
+                            @if (Route::has('login'))  
+                            <li> <a href="{{ route('login') }}">{{ __('ورود') }}</a> </li>
+                            @endif
+                            @if (Route::has('register'))
+                            <li> <a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> {{ __('عضویت') }}</a> </li>
+                            @endif
+                            @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+                </ul>
+				<!-- 
+				<li><a href="{{ url('/login') }}">Login</a></li>
+                <li><a href="{{ url('/register') }}">Register</a></li>
+				
+				  <li>
+                    <a href="{{ url('/logout') }}"
+                       onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+				-->
+                <a href="{{ route('main.index2') }}" class="navbar-brand bran_bt" style="font-size: 30px">فروشگاه مصالح و تجهیزات ساختمانی </a>
+                <ul class="nav navbar-left">
+                    {{-- <li><a href="route('views.blog.index.blade.php')">Blog</a></li>--}}
+                    {{-- <li><a href="{{ route('other.about') }}">about</a></li>--}}
+                    <li><a href="{{route('main.index2')}}">صفحه اصلی</a></li>
+                    <li><a href="{{route('Products.index')}}">محصولات</a></li>
+                    {{-- <li><a href="{{route('Online-Shopping.index')}}">فروشگاه</a></li>--}}
+                    <li><a href="{{route('blog.index')}}">وبلاگ</a></li>
+                    <li><a href="{{route('other.about')}}">درباره ما</a></li>
+                    {{-- <li><a href="{!!   route('other.about')  !!}">About !! </a></li>--}}
+                </ul>
+            </div>
+            <div class="col-md-auto">
+                <img src="img/Logo/logo.png" alt="" class="site-Brand">
+            </div>
         </div>
     </div>
-    </div>
-    <div class="below-Sec">
-    <div class="container-fluid">
-        <div class="Search_box center-block">
+    <div class="below-Sec center-block">
+        <div class="container-fluid">
+            <div class="Search_box ">
                 <form action="">
                     <input type="text" name="" placeholder="جستجو کنید...">
                     <button type="submit" class="fa fa-search"></button>
                 </form>
             </div>
-        <div class="col-md-8 center-block">
-            <i class="fa fa-map-marker "> <a>آذربایجان شرقی، تبریز ، ما بین لاله و ابوریجان ، میدان ابوذر (داش ساختمان)</a> </i>
+            <div class="col-md-8">
+                <i class="fa fa-map-marker "> <a>آذربایجان شرقی - تبریز</a> </i>
+                <i class="fa fa-telegram"> <a>0914 555 44 88 </a></i>
+                <i class="fa fa-whatsapp"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
         </div>
-        <div class="col-md-auto center-block">
-            <i class="fa fa-telegram"> <a>0914 555 44 88 </a></i>
-            <i class="fa fa-whatsapp"></i>
-            <i class="fa fa-instagram"></i>
-        </div>
-    </div>
     </div>
 </nav>
 
@@ -92,4 +130,3 @@
         </div>
     </div>
 </div>
-

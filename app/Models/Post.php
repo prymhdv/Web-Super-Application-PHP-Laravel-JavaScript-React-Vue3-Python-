@@ -72,4 +72,12 @@ class Post extends Model
         ];
         $session->put('posts', $posts);
     }
+	
+	 public function setTitleAttribute($value) {
+        $this->attributes['title'] = strtolower($value);
+    }
+
+    public function getTitleAttribute($value) {
+        return strtoupper($value);
+    }
 }

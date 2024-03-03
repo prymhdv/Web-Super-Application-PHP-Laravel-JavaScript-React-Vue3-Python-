@@ -4,21 +4,8 @@
     width: 100%;
     z-index: 100;
 }
-#container:fullscreen {
-    width: 100vw;
-    height: 100vh;
-}
-
-#container{
-    width: 100%;
-}
-*{
-
-        padding: 0;
-        margin: 0;
-        outline: 0;
-        border: 0;
-}
+ 
+  
 /* *:hover{
     cursor:move;
     cursor:pointer;
@@ -32,6 +19,21 @@
         src: url('../fonts/IRANSans-web.woff')  format('woff');
 }
 
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
 body{
 
     background-color: #fbfbfb;
@@ -52,12 +54,9 @@ p {
 h1{
     font-family: "B Homa";
     font-size: large;
-
 }
 
-li{
-list-style: none;
-}
+ 
 a:hover{
        text-decoration: none;
 }
@@ -101,12 +100,14 @@ img{
     margin-right: auto;
     width: 100%;
 }
-/*////////////////////////////////////////*/
-/*////////////////////////////////////////*/
+/*---------------------------------------------*/
+/*                  HeaderMenu                 */
+/*---------------------------------------------*/
 .HeaderMenu{
     /*font-family: "B Titr";*/
     color: #000;
     font-size: large;
+    font-family: "B Homa";
     /*background-image: linear-gradient(269deg, #00d9d6 0%,#9be1dd 100%);*/
     /*background-image: linear-gradient(269deg, #419641 0%,#d43f3a 100%);*/
     background-image:
@@ -115,56 +116,46 @@ img{
 
     /*background-image:*/
     /*    linear-gradient(123deg, #461B93 0%, #461B93 40%, #6A3CBC calc(40% + 1px), #6A3CBC 60%, #8253D7 calc(60% + 1px), #8253D7 70%, #F78F1E calc(70% + 1px), #F78F1E 100%)*/
-    text-decoration: none;
-
-
+   
 }
 
-
-@keyframes animate {
-
-    0%{
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100%{
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-
+.HeaderMenu .upper-Sec li{
+display: inline-block;
 }
-.HeaderMenu .upper-Sec .container-fluid  a:hover {
-    color: black;
-    border-radius: 20px;transition: 1s ease;
-}
-.HeaderMenu a{
-    color: #fbfbfb;
-    font-size: large;
-    text-align: center;
-    margin: 10px 5px 5px 5px;
-    font-family: "B Homa"; text-decoration: none;
-}
+
 .HeaderMenu .upper-Sec .bran_bt{
-    font-size: 232px;color: #FFFFFF;
+    font-size: 232px;
+    color: #FFFFFF;
+    font-family: "B Homa";
 }
-.HeaderMenu .upper-Sec .bran_bt:hover{
+.HeaderMenu .upper-Sec .container-fluid .bran_bt:hover{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease;
     color: #FFFFFF;
+    font-family: "B Homa";
 }
-/* .HeaderMenu .upper-Sec .container-fluid{
-    alignment-baseline: auto; 
-
-} */
-.HeaderMenu .upper-Sec .container-fluid .col-md-8{
-    text-align: left;
+.HeaderMenu .upper-Sec .container-fluid .col-md-8 .navbar-right li a{
+    display: inline-block;
+    color: #fbfbfb;
+    font-size: large;
+    text-align: center;
+    margin: 10px 5px 5px 5px;
+    font-family: "B Homa"; 
+    text-decoration: none;
 }
-.HeaderMenu .upper-Sec .container-fluid .col-md-8 i{
+.HeaderMenu .upper-Sec .container-fluid .col-md-8 .navbar-right li a:hover {
+    color: black;
+    border-radius: 20px;
+    transition: 1s ease;
+}
+.HeaderMenu .upper-Sec .container-fluid .col-md-8 .navbar-left {
+    text-align: center;
+    display: inline-block;
+    font-family: "B Homa";
+}
+.HeaderMenu .upper-Sec .container-fluid .col-md-8 .navbar-left i{
     color: #f60404;
     font-size: large;
     padding: 0 0px 0 0;
@@ -175,12 +166,21 @@ img{
     width: auto;
 
 }
-.HeaderMenu .upper-Sec .container-fluid .col-md-8 i:after {
-    font-size: larger;
-    color: #761c19;
+ 
+
+.HeaderMenu .upper-Sec .container-fluid .col-md-8 .navbar-left li a{
+    display: inline-block;
+    color: #fbfbfb;
+    font-size: large;
+    text-align: center;
+    margin: 10px 5px 5px 5px;
+    font-family: "B Homa"; 
+    text-decoration: none;
 }
-.HeaderMenu .upper-Sec .container-fluid .col-md-8 a.navbar-brand.bran_bt:hover{
-    color: #FFFFFF;
+.HeaderMenu .upper-Sec .container-fluid .col-md-8 .navbar-left li a:hover {
+    color: black;
+    border-radius: 20px;
+    transition: 1s ease;
 }
 .HeaderMenu .upper-Sec .container-fluid .col-md-auto{
     text-align: center;
@@ -196,19 +196,18 @@ img{
     width: auto;
     text-anchor: middle;
 }
-
-
-
+ 
 .HeaderMenu .upper-Sec .container-fluid .col-md-auto i a:hover {
-    color: white;transition: 1s ease;
+    color: white;
+    transition: 1s ease;
 
 }
 .HeaderMenu .upper-Sec .container-fluid .col-md-auto i:hover {
-    color: #000000;transition: 1s ease;
+    color: #000000;
+    transition: 1s ease;
 }
 .HeaderMenu .below-Sec{
     padding: 10px 10px;
-
 }
 .HeaderMenu .below-Sec .container-fluid .col-md-8{
     text-align: left;text-decoration: none;
@@ -217,16 +216,22 @@ img{
 .HeaderMenu .below-Sec .container-fluid  a{
     color: white;
     text-decoration: none;
-
+    text-align: center;
+    display: inline-block;
+    font-family: "B Homa";
+}
+.HeaderMenu .below-Sec .container-fluid .col-md-8 i{
+    color: #eee;
+    text-decoration: none;
 }
 .HeaderMenu .below-Sec .container-fluid .col-md-8 i:hover {
-    color: white;text-decoration: none;
+    color: rgb(228, 3, 3);
+    text-decoration: none;
 }
-.HeaderMenu .below-Sec .container-fluid .col-md-auto i:hover {
-    color: white;text-decoration: none;
-}
-/*////////////////////////////////////////*/
-/*////////////////////////////////////////*/
+ 
+/*---------------------------------------------*/
+/*                  HeaderMenu                 */
+/*---------------------------------------------*/
 .site-Brand{
     filter: contrast(2.75);
     scale: 150%;
@@ -244,8 +249,9 @@ img{
         transform: scale(1.2);
         transition: 1s ease;
 }
-/*////////////////////////////////////////*/
-/*////////////////////////////////////////*/
+/*---------------------------------------------*/
+/*                  HeaderMenu                 */
+/*---------------------------------------------*/
 .Search_box{
     margin-bottom: 10px;
     display: block;
@@ -281,8 +287,7 @@ img{
     border-radius: 50% ;
 
 }
-/*********************************/
-/*********************************/
+
 .top-bar{
 
        font-size: 23px;
@@ -290,40 +295,28 @@ img{
        line-height: 2;
 
 }
-
+/*---------------------------------------------*/
+/*                  main-menu items            */
+/*---------------------------------------------*/
 .main-menu{
-    height: 70px;
-        /* background-color:#eee ; */
-    margin-bottom: 50px;
-    padding-bottom: 50px;
+    height: auto;
+    margin : auto;
     text-decoration: none;
-
+    z-index: 20;
+    /*box-shadow: 5px 3px 35px 5px rgba(0,0,0,0.14);*/
+    margin-top: 10px;
 }
-.main-menu .menu-item a {
-  margin: 1px 1px 1px 1px;
-  border-radius: 20px;
-    color: #0f0f0f;
-    text-decoration: none;
-}
-
-.main-menu .menu-item ul li {
-        display: inline-block;
-        margin-left: 0;
-        position: relative;
-        /*box-shadow: 5px 3px 35px 5px rgba(0,0,0,0.14);*/
-        border-radius: 0;
-
-
-
+.main-menu .menu-item ul li{
+    display: inline-block;
+    margin : auto;
+    padding: auto;
 }
 .main-menu .menu-item ul li a{
     display: inline-block;
     color: #444;
     animation: wave 2000ms ease alternate infinite;
-    display: inline-block;
     margin: 5px 5px 5px 5px;
     padding: 5px 5px 5px 5px;
-    border-radius: 8px;
     font-size: 18px;
     font-family: "B Homa";
     background-color: initial;
@@ -333,68 +326,26 @@ img{
     box-shadow: 1px 3px 35px 1px rgba(0,0,0,0.14);
     transition: 1s ease;
     text-decoration: none;
-
+    border-radius: 8px;
 }
 .main-menu .menu-item ul li a:hover{
-        color: #000;
+    color: #fe0000;
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     transition: 1s ease;
 }
-.main-menu .menu-item ul li > ul{
-        position: absolute;
-        width: 180px;
-        /* background-color: #eee; */
-
-        right: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 20;
-        /*box-shadow: 5px 3px 35px 5px rgba(0,0,0,0.14);*/
-
-}
-.main-menu .menu-item ul li:hover > ul{
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.3s ease;
-        padding: 0;
-}
-.main-menu .menu-item ul li ul li{
-display: block;
-width: 100%;
-
-}
-.main-menu .menu-item ul li ul li a{
-display: block;
-padding: 10px 18px 10px 8px;
-position: relative;
-
-}
-.main-menu .menu-item ul li ul li a::before{
-        content: '\f104';
-        font-family: FontAwesome;
-        position: absolute;
-        top: 12px;
-        right: 5px;
-        font-size: 12px;
-}
-.main-menu .menu-item ul li ul li ul{
-        top: 0;
-        right: 100%;
-
-}
-/***************************************************/
-/***************************************************/
-/***************************************************/
+/*---------------------------------------------*/
+/*                  slider                     */
+/*---------------------------------------------*/
 .slider-box{
- padding: 50px 20px;
+ 
 background-image: url('../img/aa.jpg');
 background-size: cover;
 background-position: center center;
 background-color: #ff0000;
 margin-bottom: 50px;
+margin-top: 50px;
 
 
 }
@@ -442,8 +393,9 @@ margin-bottom: 50px;
 .photo-next{
     margin-right: 50%;
 }
-/*********************************/
-/*********************************/
+/*---------------------------------------------*/
+/*                  Services                   */
+/*---------------------------------------------*/
 .services{
         margin-top: 50px;
         margin-bottom: 50px;
@@ -525,8 +477,9 @@ transition: all 0.3s ease;
         color: #fbfbfb;
         transition: all 0.3s ease;
 }
-/*********************************/
-/*********************************/
+/*---------------------------------------------*/
+/*                  Blog                       */
+/*---------------------------------------------*/
 .index-blog{
     margin-bottom: 50px;
 
@@ -652,7 +605,9 @@ white-space: nowrap;
 {
         border-bottom: none;
 }
-
+/*---------------------------------------------*/
+/*                  Footer                     */
+/*---------------------------------------------*/
 .footer_box{
   background-color: #212121;
   /* background-image: url(img/footer-bg.jpg); */
@@ -756,9 +711,9 @@ white-space: nowrap;
     font-family: "B Homa";
 
 }
-
-/*////////////////////////////////////////*/
-/*////////////////////////////////////////*/
+/*---------------------------------------------*/
+/*                  Footer                     */
+/*---------------------------------------------*/
 .about_bx {
     box-shadow: 5px 3px 35px 5px rgba(0, 0, 0, 0.14);
     padding: 15px;

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('ip');
             $table->unique(['email','password']);
-
+            $table->rememberToken();
         });
     }
 
@@ -34,5 +34,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+		 Schema::drop('users');
     }
 };

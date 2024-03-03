@@ -69,3 +69,10 @@ Route::group(['prefix' => 'admin'], function() {
         'as' => 'admin.update'
     ]);
 });
+/*------------------------------------------------------------*/
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('login', [
+    'uses' => 'SigninController@signin',
+    'as' => 'auth.signin'
+]);
