@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
 			$table->integer('user_id');
-            $table->photo('photo');
+            //$table->photo('photo');
             $table->integer('post_id');
             $table->integer('tag_id');
             

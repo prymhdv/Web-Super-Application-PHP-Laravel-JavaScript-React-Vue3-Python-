@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('others', function(Blueprint $table){
-            $table->foreign('photo_id')->references('id')->on('photos');
+        Schema::create('others', function(Blueprint $table){
+            $table->id();
+            $table->timestamps();
+            //$table->foreign('photo_id')->references('id')->on('photos');
         });
     }
 

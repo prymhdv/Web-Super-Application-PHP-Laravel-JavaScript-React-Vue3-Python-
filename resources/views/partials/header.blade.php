@@ -1,25 +1,12 @@
-<script data-cfasync="false" type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
-<script>
-    var $a = $.noConflict(true);
-    $a(window).scroll(function() {
-        if ($a(window).scrollTop() >= 300) {
-            $a('.cg-menu-below').addClass('fixed-header');
-        } else {
-            $a('.cg-menu-below').removeClass('fixed-header');
-        }
-    });
-</script>
-
-
-
+ 
 <nav class="HeaderMenu">
     <div class="upper-Sec">
         <div class="container-fluid">
             <div class="col-md-8">
                 <ul class="navbar-right">
-                            <!-- Authentication Links -->
-                            <!-- <span class="glyphicon glyphicon-log-in"> -->
-                            @guest
+                    <!-- Authentication Links -->
+                    <!-- <span class="glyphicon glyphicon-log-in"> -->
+                    <!-- @guest
                             @if (Route::has('login'))  
                             <li> <a href="{{ route('login') }}">{{ __('ورود') }}</a> </li>
                             @endif
@@ -43,9 +30,39 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
+                            @endguest -->
+                    <!-- Authentication Links 2 -->
+                    @if(!Auth::check())
+                    <li> <a href="{{ route('login') }}">{{ __('ورود') }}</a> </li>
+                    <li> <a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> {{ __('عضویت') }}</a> </li>
+                    @else
+                    <!-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('خروج') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form> -->
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('خروج') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endif
                 </ul>
-				<!-- 
+                <!-- 
 				<li><a href="{{ url('/login') }}">Login</a></li>
                 <li><a href="{{ url('/register') }}">Register</a></li>
 				
@@ -70,7 +87,10 @@
                     {{-- <li><a href="{{route('Online-Shopping.index')}}">فروشگاه</a></li>--}}
                     <li><a href="{{route('blog.index')}}">وبلاگ</a></li>
                     <li><a href="{{route('other.about')}}">درباره ما</a></li>
+                    <li><a href="{{route('testJS')}}">JS</a></li>
+                    <li><a href="{{route('hotel_home')}}">Hottel</a></li>
                     {{-- <li><a href="{!!   route('other.about')  !!}">About !! </a></li>--}}
+
                 </ul>
             </div>
             <div class="col-md-auto">

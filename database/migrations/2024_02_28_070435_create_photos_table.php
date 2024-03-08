@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('src');
             $table->string('mime_type')->nullable();
-            $table->string('title')->nullable();
             $table->string('alt')->nullable();
-            $table->text('description')->nullable();
+            $table->text('description');
             $table->timestamps();
         });
     }

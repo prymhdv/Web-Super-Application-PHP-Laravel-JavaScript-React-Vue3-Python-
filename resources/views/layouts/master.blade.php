@@ -17,27 +17,22 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="http://localhost:8097"></script>
+
     <!-- Title -->
     <title>Shoping Center</title>
 
     <!-- Latest compiled and minified CSS -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css" >
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
-    <!-- Styles -->
+    <!-- Styles CSS-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/navLink.css') }}">
-    <link rel="stylesheet" href="{{ URL::to('css/navLink.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Single.css') }}">
-    
-    
+    <link rel="stylesheet" href="{{ asset('css/JStest.css') }}">
 
-    <link rel="stylesheet" href="css/style.css"> <!-- own folder -->
-    <link rel="stylesheet" href="css/Single.css"> <!-- own folder -->
-    <link rel="stylesheet" href="css/photoSlider.css"> <!-- own folder -->
 
     {{-- <link rel="stylesheet" href="css/animated.css" >--}}
     {{-- <script type="module"  href="js/animated.js" defer></script>--}}
@@ -45,14 +40,15 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script type="module" src="{{ asset('js/app.js') }}" defer></script>
-    <link rel="stylesheet" href="{{ asset('css/H2.css') }}">
 
-    <link href="css/1b-gallery.css" rel="stylesheet">
-    <link href="css/2b-caption-gallery.css" rel="stylesheet">
-    <script type="module" src="js/1c-gallery.js"></script>
+
+    <link href="{{asset('css/1b-gallery.css')}}" rel="stylesheet">
+    <link href="{{asset('css/2b-caption-gallery.css')}}" rel="stylesheet">
+
     <!-- (A) CSS & JS -->
+    <script src="{{ asset('js/Own.js') }}"></script>
 
-    <script type="module" src="jq/jquery-3.7.1.min.js"></script>
+    <script type="module" src="{{asset('jq/jquery-3.7.1.min.js')}}"></script>
     <!-- script -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
