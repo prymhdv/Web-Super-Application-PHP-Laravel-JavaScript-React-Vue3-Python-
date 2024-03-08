@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use App\Notifications\CustomPasswordReset;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -28,7 +28,14 @@ class User extends Authenticatable
     ];
 	 public function posts()
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomPasswordReset($token));
+
+
     }
 
 }

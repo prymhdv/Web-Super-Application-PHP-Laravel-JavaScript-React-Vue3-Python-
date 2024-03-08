@@ -9,7 +9,11 @@ class Post extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'content'];
-   
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function likes(){
         return $this->hasMany(Like::class,'post_id');
     }
@@ -17,7 +21,12 @@ class Post extends Model
     {
         return $this->belongsToMany('App\ModelS\Tag', 'post_tag', 'post_id', 'tag_id')->withTimestamps();
     }
-
+    public function comments(){
+        return $this->hasMany(Comment::class,'comment');
+    }
+    public function commentsCount(){
+        return $this->comments()->count();
+    }
     public function getIndex(Store $session)
     {
         $posts = Post::all();

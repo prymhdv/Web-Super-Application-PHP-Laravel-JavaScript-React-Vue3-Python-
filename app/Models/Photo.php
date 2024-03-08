@@ -11,7 +11,7 @@ class Photo extends Model
     protected $fillable = [
         'title',
         'src', //the path you uploaded the image
-        'mime_type'
+        'mime_type',
         'description',
         'alt',
       ];

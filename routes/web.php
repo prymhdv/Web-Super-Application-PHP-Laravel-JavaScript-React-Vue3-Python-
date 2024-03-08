@@ -20,6 +20,10 @@ Route::get('Products', function () {
     return view('Products.index');
 })->name('Products.index');
 /*------------------------------------------------------------*/
+Route::get('testJS', function () {
+    return view('main.testJS');
+})->name('main.testJS');
+/*------------------------------------------------------------*/
 Route::get('/blog', [
     'uses' => 'PostController@getIndex',
     'as' => 'blog.index'
@@ -37,11 +41,12 @@ Route::get('post/{id}/like', [
 Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
-
-Route::group(['prefix' => 'admin'], function() {
+// Route::group(['prefix' => 'admin','middleware' => ['auth' ,'guest']], function () {
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
     Route::get('', [
         'uses' => 'PostController@getAdminIndex',
-        'as' => 'admin.index'
+        'as' => 'admin.index', 
+        // 'middleware' => 'auth'
     ]);
 
     Route::get('create', [

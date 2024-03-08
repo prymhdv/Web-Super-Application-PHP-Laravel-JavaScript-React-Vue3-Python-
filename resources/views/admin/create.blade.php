@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.errors')
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 center-text">
         <form action="{{ route('admin.create') }}" method="post">
             <div class="form-group">
                 <label for="title">Title</label>
