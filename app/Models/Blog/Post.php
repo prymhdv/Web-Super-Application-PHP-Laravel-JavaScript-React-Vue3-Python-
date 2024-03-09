@@ -28,6 +28,15 @@ class Post extends Model
     public function commentsCount(){
         return $this->comments()->count();
     }
+<<<<<<< HEAD:app/Models/Blog/Post.php
+=======
+    public function comments(){
+        return $this->hasMany(Comment::class,'comment');
+    }
+    public function commentsCount(){
+        return $this->comments()->count();
+    }
+>>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74:app/Models/Post.php
     public function getIndex(Store $session)
     {
         $posts = Post::all();

@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Blog\Like;
 use App\Models\Blog\Post;
 use App\Models\Blog\Tag;
+=======
+use App\Models\Like;
+use App\Models\Post;
+use App\Models\Tag;
+>>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
 use Auth;
 use Gate;
 use Illuminate\Http\Request;

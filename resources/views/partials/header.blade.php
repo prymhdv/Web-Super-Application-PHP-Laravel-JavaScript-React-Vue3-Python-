@@ -87,8 +87,12 @@
                     {{-- <li><a href="{{route('Online-Shopping.index')}}">فروشگاه</a></li>--}}
                     <li><a href="{{route('blog.index')}}">وبلاگ</a></li>
                     <li><a href="{{route('other.about')}}">درباره ما</a></li>
+<<<<<<< HEAD
                     <li><a href="{{route('testJS')}}">JS</a></li>
                     <li><a href="{{route('hotel_home')}}">Hottel</a></li>
+=======
+                    <li><a href="{{route('main.testJS')}}">testJS</a></li>
+>>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
                     {{-- <li><a href="{!!   route('other.about')  !!}">About !! </a></li>--}}
 
                 </ul>

@@ -16,6 +16,10 @@ Route::get('Products', function () {  return view('Products.index');})->name('Pr
 /*------------------------------------------------------------*/
 Route::get('testJS', function () {return view('main.testJS');})->name('testJS');
 /*------------------------------------------------------------*/
+Route::get('testJS', function () {
+    return view('main.testJS');
+})->name('main.testJS');
+/*------------------------------------------------------------*/
 Route::get('/blog', [
     'uses' => 'PostController@getIndex',
     'as' => 'blog.index'
@@ -34,10 +38,17 @@ Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 // Route::group(['prefix' => 'admin','middleware' => ['auth' ,'guest']], function () {
+<<<<<<< HEAD
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('', [
         'uses' => 'PostController@getAdminIndex',
         'as' => 'admin.index',
+=======
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
+    Route::get('', [
+        'uses' => 'PostController@getAdminIndex',
+        'as' => 'admin.index', 
+>>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
         // 'middleware' => 'auth'
     ]);
 
