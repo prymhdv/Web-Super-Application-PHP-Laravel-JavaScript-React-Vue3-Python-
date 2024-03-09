@@ -50,6 +50,7 @@
           </div>
           <div class="medium-12  columns">
             <input value="SAVE" class="button success hollow" type="submit">
+            <input value="DELETE" class="button success hollow" type="submit">
           </div>
         </form>
       </div>

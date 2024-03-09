@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html data-whatinput="keyboard" data-whatintent="keyboard" class=" whatinput-types-initial whatinput-types-keyboard"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <title>Landon Hotel App</title>
+            <link rel="icon" type="image/x-icon" href="favicon.ico" />
+            <link rel="stylesheet" href="css/foundation.css">
+            <link rel="stylesheet" href="css/app.css">
+            <link rel="stylesheet" href="pickadate/lib/themes/default.css">
+            <link rel="stylesheet" href="pickadate/lib/themes/default.date.css">
+    <meta class="foundation-mq"></head>
+    <body>
+
+        <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="row">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu="tckp8q-dropdown-menu" role="menubar">
+            <li role="menuitem"><a href="./home.html">Home</a></li>
+            <li role="menuitem"><a href="./clients.html">Clients</a></li>
+            <li role="menuitem"><a href="./reservations.html">Reservations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <br>
+    
+    
+    <div class="row">
+      <div class="medium-12 large-12 columns">
+        <h4>New Client</h4>
+        <form action="/clients/new" method="post">
+          <div class="medium-4  columns">
+            <label>Title</label>
+            <select name="form[title]">
+                          <option value="mr" selected="selected">Mr.</option>
+                          <option value="ms">Ms.</option>
+                          <option value="mrs">Mrs.</option>
+                          <option value="dr">Dr.</option>
+                          <option value="mx">Mx.</option>
+                        </select>
+          </div>
+          <div class="medium-4  columns">
+            <label>Name</label>
+            <input name="form[name]" type="text">
+          </div>
+          <div class="medium-4  columns">
+            <label>Last Name</label>
+            <input name="form[lastName]" type="text">
+          </div>
+          <div class="medium-8  columns">
+            <label>Address</label>
+            <input name="form[address]" type="text">
+          </div>
+          <div class="medium-4  columns">
+            <label>zip_code</label>
+            <input name="form[zipCode]" type="text">
+          </div>
+          <div class="medium-4  columns">
+            <label>City</label>
+            <input name="form[city]" type="text">
+          </div>
+          <div class="medium-4  columns">
+            <label>State</label>
+            <input name="form[state]" type="text">
+          </div>
+          <div class="medium-12  columns">
+            <label>Email</label>
+            <input name="form[email]" type="text">
+          </div>
+          <div class="medium-12  columns">
+            <input value="SAVE" class="button success hollow" type="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    
+
+    <div class="row column">
+      <hr>
+      <ul class="menu">
+        <li class="float-right">Copyright 2017</li>
+      </ul>
+    </div>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+        <script>
+      $(document).foundation();
+    </script>
+
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/app.js"></script>
+        <script src="pickadate/lib/picker.js"></script>
+        <script src="pickadate/lib/picker.date.js"></script>
+        <script>
+            $('.datepicker').pickadate(
+              { 
+                format: 'yyyy-mm-dd',
+                formatSubmit: 'yyyy-mm-dd' 
+              }
+              );
+        </script>
+
+    </body>
+</html>

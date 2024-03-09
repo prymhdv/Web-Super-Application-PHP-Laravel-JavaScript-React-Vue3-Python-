@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shopping;
 use Illuminate\Http\Request;
 use App\Models\Shopping\Title as Title;
 use App\Models\Shopping\Client as Client;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
 class ClientController extends Controller
@@ -22,8 +23,25 @@ class ClientController extends Controller
         dd($this->titles);
 
     }
+    protected function destroyClient($id) //Destruir cliente y todo lo relacionado de la bbdd
+    {
+        $cliente = Client::find($id);
+        $cliente_project = DB::table('clients')->where('client_id', $id)->first();
+        $project_id = $cliente_project->project_id;
+        $cliente->delete(); //delete the client
+        DB::table('clients')->where('client_id',$id)->delete(); //delete the client_project relations which field client_id is the same that the client i just deleted.
+
+        // DB::table('projects')->where('id',$project_id)->delete();
+        // DB::table('project_translations')->where('project_id',$project_id)->delete();
+
+        return redirect()->route('admin.clients');
+    }
     public function index()
     {
+
+
+        
+        //$this->destroyClient($client_id);
         //dd($this->titles);
         // $data = [];
 
@@ -72,8 +90,7 @@ class ClientController extends Controller
         $data['state'] = $request->input('state');
         $data['email'] = $request->input('email');
 
-        // $data['modify'] = 0;
-        // $data['titles'] = $this->titles;
+        
         
 
 
@@ -96,16 +113,18 @@ class ClientController extends Controller
             
             $client->insert($data);
 
-            return redirect('Hottel/client/');
+            return redirect('hotel/clients'); ///fromroots
         }
-        
+
+        $data['modify'] = 0;
+        $data['titles'] = $this->titles;
         return view('Hottel/client/form', $data);
 
     }
     
     public function create()
     {
-        return __FILE__;
+        //return __FILE__;
         return view('Hottel/client/create');
 
     }
@@ -168,9 +187,14 @@ class ClientController extends Controller
                     'email' => 'required',
 
                 ]
-            );
+            ); 
+           if($request['value'] == 'DELETE'){
+             $this->destroyClient($client_id);}
+           else{
 
             $client_data = $this->client->find($client_id);
+
+
 
             $client_data->title = $request->input('title');
             $client_data->name = $request->input('name');
@@ -182,8 +206,9 @@ class ClientController extends Controller
             $client_data->email = $request->input('email');
 
             $client_data->save();
+           }
 
-            return redirect('Hottel/client/');
+            return redirect('hotel/clients/');
         }
         
         return view('Hottel/client/form', $data);

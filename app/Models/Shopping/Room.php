@@ -43,6 +43,7 @@ class Room extends Model
                         ->count()
         ;
         return $available_rooms;
-
     }
+
+    
 }

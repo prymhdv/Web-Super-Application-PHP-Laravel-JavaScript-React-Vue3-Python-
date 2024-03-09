@@ -99,7 +99,7 @@ Route::get('/hotel/clients', 'Shopping\ClientController@index')->name('hotel_cli
 Route::get('/hotel/clients/new', 'Shopping\ClientController@newClient')->name('hotel_new_client');
 Route::post('/hotel/clients/new', 'Shopping\ClientController@newClient')->name('hotel_create_client');
 Route::get('/hotel/clients/{client_id}', 'Shopping\ClientController@show')->name('hotel_show_client');
-Route::post('/hotel/clients/{client_id}', 'Shopping\ClientController@modify');
+Route::post('/hotel/clients/{client_id}', 'Shopping\ClientController@modify')->name('hotel_update_client');
 //----------------
 Route::get('/hotel/reservations/{client_id}', 'Shopping\RoomsController@checkAvailableRooms')->name('hotel_check_room');
 Route::post('/hotel/reservations/{client_id}', 'Shopping\RoomsController@checkAvailableRooms')->name('hotel_check_room');

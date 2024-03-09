@@ -22,8 +22,9 @@
                 <td>{{ $client->title }}. {{ $client->name }} {{ $client->last_name }}</td>
                 <td>{{ $client->email }}</td>
                 <td>
-                  <a class="hollow button" href="{{ route('hotel_show_client', ['client_id' => $client->id ]) }}">EDIT</a>
-                  <a class="hollow button warning" href="{{ route('hotel_check_room', ['client_id' => $client->id ]) }}">BOOK A ROOM</a>
+                <!-- <a class="hollow button" href="{{ route('hotel_clients', ['client_id' => $client->id ]) }}">DELETE</a> -->
+                <a class="hollow button" href="{{ route('hotel_show_client', ['client_id' => $client->id ]) }}">EDIT/DELETE</a>
+                <a class="hollow button warning" href="{{ route('hotel_check_room', ['client_id' => $client->id ]) }}">BOOK A ROOM</a>
                 </td>
               </tr>
           @endforeach
