@@ -17,10 +17,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-<<<<<<< HEAD
     <script src="http://localhost:8097"></script>
-=======
->>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
 
     <!-- Title -->
     <title>Shoping Center</title>
