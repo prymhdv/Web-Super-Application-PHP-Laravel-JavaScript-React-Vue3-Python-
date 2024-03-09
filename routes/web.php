@@ -108,5 +108,7 @@ Route::post('/hotel/clients/{client_id}', 'Shopping\ClientController@modify')->n
 Route::get('/hotel/reservations/{client_id}', 'Shopping\RoomsController@checkAvailableRooms')->name('hotel_check_room');
 Route::post('/hotel/reservations/{client_id}', 'Shopping\RoomsController@checkAvailableRooms')->name('hotel_check_room');
 
-Route::post('/hotel/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'Shopping\ReservationsController@bookRoom')->name('hotel_book_room');
+Route::post('/hotel/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'Shopping\ReservationsController@bookRoom')
+->name('hotel_book_room');
+ 
 /*------------------------------------------------------------*/

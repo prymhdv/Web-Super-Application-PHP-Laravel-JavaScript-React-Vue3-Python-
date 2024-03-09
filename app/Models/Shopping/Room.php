@@ -12,6 +12,7 @@ class Room extends Model
 
     public function getAvailablerooms($start_date, $end_date)
     {
+         // dd($start_date, $end_date);   
         $available_rooms = DB::table('rooms as r')
                                     ->select('r.id', 'r.name')
                                     ->whereRaw("

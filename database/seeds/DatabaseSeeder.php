@@ -34,6 +34,20 @@ class DatabaseSeeder extends Seeder
                         VALUES
                         ( '2027-01-01', '2027-01-05', (SELECT id FROM clients LIMIT 1), (SELECT id FROM rooms LIMIT 1) )
                         ");
+
+
+        DB::unprepared("
+            SELECT r.id, r.name 
+                FROM rooms as r
+                WHERE r.id NOT IN ( 
+                        SELECT b.room_id 
+                        FROM reservations b
+                        WHERE NOT (
+                                    b.date_out < '2017-01-02' OR
+                                    b.date_in > '2017-01-03'
+                                    )
+                )
+        ");
     }
 }
  //if(!Schema::hasTable('users')) 
