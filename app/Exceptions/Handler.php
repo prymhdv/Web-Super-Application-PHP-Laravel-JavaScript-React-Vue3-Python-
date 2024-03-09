@@ -2,11 +2,11 @@
 
 namespace App\Exceptions;
 
-use Exception;
+use Throwable;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use App\Exceptions\MethodNotAllowedHttpException;
- 
+
+
 
 
 class Handler extends ExceptionHandler
@@ -21,26 +21,26 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-     /**
+    /**
      * A list of the exception types that should not be reported.
      *
      * @var array
      */
-     /**
+    /**
      * Report or log an exception.
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $e
+     * @param   Throwable  $e
      * @return void
      */
     //Exception $e
-    public function report($exception)
+    public function report(Throwable  $e)
     {
-        parent::report($exception);
+        parent::report($e);
     }
     protected $dontReport = [
-        //\Illuminate\Auth\AuthenticationException::class,
+        \Illuminate\Auth\AuthenticationException::class,
         \Illuminate\Auth\Access\AuthorizationException::class,
         \Symfony\Component\HttpKernel\Exception\HttpException::class,
         \Illuminate\Database\Eloquent\ModelNotFoundException::class,
@@ -50,11 +50,11 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $e
+     * @param  \Throwable  $e
      * @return \Illuminate\Http\Response
      */
     //Exception $e
-    public function render($request,$e)
+    public function render($request, $e)
     {
         return parent::render($request, $e);
     }
@@ -64,9 +64,9 @@ class Handler extends ExceptionHandler
     //Throwable
     public function register(): void
     {  //MethodNotAllowedHttpException
-        $this->reportable(function ( $e) {
-            //
-        });
+        // $this->reportable(function ($e) {
+        //     //
+        // });
     }
     /**
      * Convert an authentication exception into an unauthenticated response.

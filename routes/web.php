@@ -11,14 +11,14 @@
 |
 */
 /*------------------------------------------------------------*/
-Route::get('/', function () {return view('main.index2');})->name('main.index2');
-Route::get('Products', function () {  return view('Products.index');})->name('Products.index');
+Route::get('/', function () {
+    return view('main.index2');
+})->name('main.index2');
+Route::get('Products', function () {
+    return view('Products.index');
+})->name('Products.index');
 /*------------------------------------------------------------*/
-Route::get('testJS', function () {return view('main.testJS');})->name('testJS');
-/*------------------------------------------------------------*/
-Route::get('testJS', function () {
-    return view('main.testJS');
-})->name('main.testJS');
+Route::get('testJS', function () {   return view('main.testJS');})->name('testJS');
 /*------------------------------------------------------------*/
 Route::get('/blog', [
     'uses' => 'PostController@getIndex',
