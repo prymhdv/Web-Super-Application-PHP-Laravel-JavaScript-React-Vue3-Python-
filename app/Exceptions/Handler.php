@@ -5,13 +5,9 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-<<<<<<< HEAD
 use App\Exceptions\MethodNotAllowedHttpException;
  
 
-=======
- 
->>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
 
 class Handler extends ExceptionHandler
 {
@@ -39,18 +35,12 @@ class Handler extends ExceptionHandler
      * @return void
      */
     //Exception $e
-<<<<<<< HEAD
     public function report($exception)
     {
         parent::report($exception);
-=======
-    public function report($e)
-    {
-        parent::report($e);
->>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
     }
     protected $dontReport = [
-        \Illuminate\Auth\AuthenticationException::class,
+        //\Illuminate\Auth\AuthenticationException::class,
         \Illuminate\Auth\Access\AuthorizationException::class,
         \Symfony\Component\HttpKernel\Exception\HttpException::class,
         \Illuminate\Database\Eloquent\ModelNotFoundException::class,
@@ -73,12 +63,8 @@ class Handler extends ExceptionHandler
      */
     //Throwable
     public function register(): void
-    {
-<<<<<<< HEAD
-        $this->reportable(function (MethodNotAllowedHttpException $e) {
-=======
-        $this->reportable(function ($e) {
->>>>>>> 06324b5bcdda1012c4969ab7f28d91444a0d5d74
+    {  //MethodNotAllowedHttpException
+        $this->reportable(function ( $e) {
             //
         });
     }
