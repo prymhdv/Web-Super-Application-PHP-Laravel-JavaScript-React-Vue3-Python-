@@ -1,12 +1,12 @@
 <p align="center">
 <a href="" target="_blank"><img src="public\img\aa.jpg" width="400" alt="Super Application PHP(Laravel) JavaScript(React,Vue3)">
 </a></p>
-
+<h1 align="center">Super Application PHP(Laravel) JavaScript(React,Vue3)</h1>
 <p align="center">
-<a href=""><img src="https://github.com/Central Web/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href=""><img src="https://img.shields.io/packagist/dt/Central Web/framework" alt="Total Downloads"></a>
-<a href=""><img src="https://img.shields.io/packagist/v/Central Web/framework" alt="Latest Stable Version"></a>
-<a href=""><img src="https://img.shields.io/packagist/l/Central Web/framework" alt="License"></a>
+<a href=""><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href=""><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href=""><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href=""><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
  
 Concept:
