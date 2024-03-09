@@ -11,16 +11,16 @@ use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
-     /**
-     * The event listener mappings for the application.
-     *
-     * @var array
-     */
-    protected $listen = [
-        MigrationsStarted::class => [
-            DeleteUnitsImagesFromAws::class,
-        ]
-    ];
+    //  /**
+    //  * The event listener mappings for the application.
+    //  *
+    //  * @var array
+    //  */
+    // protected $listen = [
+    //         MigrationsStarted::class => [
+    //         DeleteUnitsImagesFromAws::class,
+    //     ]
+    // ];
     /**
      * Bootstrap any application services.
      */
@@ -43,7 +43,15 @@ class AppServiceProvider extends ServiceProvider
 //            Schema::defaultStringLength(191);
 //        });
 
+        Schema::defaultStringLength(191);
 
+        /*---------------------------MIGRATION----------------------------*/
+        $migrationsPath = database_path('migrations');
+        $directories    = glob($migrationsPath.'/*', GLOB_ONLYDIR);
+        $paths          = array_merge([$migrationsPath], $directories);
+
+        $this->loadMigrationsFrom($paths);
+        /*---------------------------MIGRATION----------------------------*/
 
 
 

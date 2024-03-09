@@ -97,7 +97,7 @@ Route::get('/facades/decrypt', function () {
 Route::get('/hotel/shop', 'Shopping\ContentsController@home')->name('hotel_home');
 Route::get('/hotel/clients', 'Shopping\ClientController@index')->name('hotel_clients');
 Route::get('/hotel/clients/new', 'Shopping\ClientController@newClient')->name('hotel_new_client');
-Route::post('/hotel/clients/new', 'Shopping\ClientController@create')->name('hotel_create_client');
+Route::post('/hotel/clients/new', 'Shopping\ClientController@newClient')->name('hotel_create_client');
 Route::get('/hotel/clients/{client_id}', 'Shopping\ClientController@show')->name('hotel_show_client');
 Route::post('/hotel/clients/{client_id}', 'Shopping\ClientController@modify');
 //----------------

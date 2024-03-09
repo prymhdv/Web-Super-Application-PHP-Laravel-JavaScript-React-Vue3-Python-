@@ -16,7 +16,7 @@
       <div class="row">
         <div class="top-bar-left">
           <ul class="dropdown menu" data-dropdown-menu="tckp8q-dropdown-menu" role="menubar">
-            <li role="menuitem"><a href="{{ route('main.index2') }}">index</a></li>
+            <li role="menuitem"><a href="{{ route('main.index2') }}">main</a></li>
             <li role="menuitem"><a href="{{ route('hotel_home') }}">Home</a></li>
             <li role="menuitem"><a href="{{ route('hotel_clients') }}">Clients</a></li>
           </ul>

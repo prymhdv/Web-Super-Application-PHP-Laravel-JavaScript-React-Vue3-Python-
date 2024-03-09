@@ -13,11 +13,11 @@ class TagSeeder extends Seeder
     public function run(): void
     {
         //
-        $tag = new \App\Models\Tag();
+        $tag = new \App\Models\Blog\Tag();
         $tag->name = 'Tutorial';
         $tag->save();
 
-        $tag = new \App\Models\Tag();
+        $tag = new \App\Models\Blog\Tag();
         $tag->name = 'Industry News';
         $tag->save();
     }

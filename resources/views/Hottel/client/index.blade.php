@@ -31,7 +31,7 @@
               
                       </tbody>
         </table>
-         <pre>{{ var_dump($client)}}</pre>
+
         
       </div>
     </div>
