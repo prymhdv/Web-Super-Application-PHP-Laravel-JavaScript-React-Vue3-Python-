@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-
+use App\Models\Shopping\Title;
 class ExampleTest extends TestCase
 {
     /**
@@ -15,5 +15,18 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function testNewClientForm(){     //cheack professor is in view or not
+        $response=$this->get('/clients/new');
+        $response->assertStatus(200);
+    }
+
+    public function testProfessorOption(){
+        $response=$this->get('/clients/new');
+        $this-> assertContains('Professor',
+            $response->getContent(),
+            'HTML should have Professor'
+        );
     }
 }

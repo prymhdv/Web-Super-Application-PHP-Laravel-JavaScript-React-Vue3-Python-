@@ -8,9 +8,10 @@
         <div class="medium-2  columns"><b>
         {{$client->title}} 
         {{$client->name}} 
-        {{$client->last_name}}
+        {{$client->last_name}} 
         </b></div>
         <form action="" method="post">
+          {{ csrf_field() }}
           <div class="medium-1  columns">FROM:</div>
           <div class="medium-2  columns"><input name="dateFrom" value="{{ $dateFrom }}" type="text" class="datepicker" /></div>
           <div class="medium-1  columns">TO:</div>
@@ -37,7 +38,7 @@
                 </div>
               </td>
               <td>
-                <a class="hollow button warning" 
+                <a class="hollow button warning"  method="post"
                   href="{{
                     route('hotel_book_room',
                       ['client_id' => $client->id,

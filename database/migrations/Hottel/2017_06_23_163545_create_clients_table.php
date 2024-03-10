@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientsTable extends Migration //php artisan make:migration create_rooms_table --create=clients
+ //class CreateClientsTable extends Migration //php artisan make:migration create_rooms_table --create=clients
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -36,4 +37,4 @@ class CreateClientsTable extends Migration //php artisan make:migration create_r
     {
         Schema::dropIfExists('clients');
     }
-}
+};

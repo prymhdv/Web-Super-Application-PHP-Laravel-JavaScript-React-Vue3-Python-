@@ -19,7 +19,9 @@ class SigninController extends Controller
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ], $request->has('remember'))) {
-            return redirect()->route('admin.index');
+            //return redirect()->route('admin.index');
+            return redirect()->route('hotel_clients');
+            
         }
         return redirect()->back()->with('fail', 'Authentication failed!');
     }

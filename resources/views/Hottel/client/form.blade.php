@@ -1,10 +1,11 @@
 @extends('Hottel.layouts.app')
-
+  <!--    {{ csrf_field() }}  cheacked inputparametgers in forms -->
 @section('content')
 <div class="row">
       <div class="medium-12 large-12 columns">
         <h4>{{ $modify == 1 ? 'Modify Client' : 'New Client' }}</h4>
-        <form action="{{ $modify == 1 ? route('hotel_update_client', [ 'client_id' => $client_id ]) : route('hotel_create_client') }}" method="post">
+        <form action="{{ $modify == 1 ? route('hotel_update_client', [ 'client_id' => $client_id]) : route('hotel_create_client') }}" method="post">
+        {{ csrf_field() }} 
           <div class="medium-4  columns">
             <label>Title</label>
             <select name="title">
@@ -53,6 +54,15 @@
             <input value="DELETE" class="button success hollow" type="submit">
           </div>
         </form>
+      
       </div>
-    </div>
+    
+
+     <div class="medium-12 large-12 columns">
+      <button type="submit" class="button success hollow"  
+              onclick="event.preventDefault(); document.getElementById('delete-client').submit();">  {{ __('DELETE') }} 
+      </button>
+              <form id="delete-client" action="{{ route('hotel_update_client', [ 'client_id' => $client_id])  }}" method="POST" class="d-none">  @csrf  </form> 
+              </div>
+    </div>  
 @endsection

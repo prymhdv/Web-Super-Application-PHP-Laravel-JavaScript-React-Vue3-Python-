@@ -1,5 +1,5 @@
 <?php
-
+ use App\Http\Controllers\Hottel\Auth as Hottel_Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +11,8 @@
 |
 */
 /*------------------------------------------------------------*/
+//                          main
+/*------------------------------------------------------------*/
 Route::get('/', function () {
     return view('main.index2');
 })->name('main.index2');
@@ -19,6 +21,12 @@ Route::get('Products', function () {
 })->name('Products.index');
 /*------------------------------------------------------------*/
 Route::get('testJS', function () {   return view('main.testJS');})->name('testJS');
+/*------------------------------------------------------------*/
+Route::get('about', function () {
+    return view('other.about');
+})->name('other.about');
+/*------------------------------------------------------------*/
+//                          Blog
 /*------------------------------------------------------------*/
 Route::get('/blog', [
     'uses' => 'PostController@getIndex',
@@ -34,9 +42,7 @@ Route::get('post/{id}/like', [
     'as' => 'blog.post.like'
 ]);
 
-Route::get('about', function () {
-    return view('other.about');
-})->name('other.about');
+
 // Route::group(['prefix' => 'admin','middleware' => ['auth' ,'guest']], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('', [
@@ -71,12 +77,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     ]);
 });
 /*------------------------------------------------------------*/
+//                   Authentification
+/*------------------------------------------------------------*/
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('login', [
     'uses' => 'SigninController@signin',
     'as' => 'auth.signin'
 ]);
+/*------------------------------------------------------------*/
+//                          Hottel
 /*------------------------------------------------------------*/
 Route::get('/di', 'Shopping\ClientController@di');
 
@@ -93,22 +103,41 @@ Route::get('/facades/decrypt', function () {
     //=
 });
 /*------------------------------------------------------------*/
-//                          Hottel
-/*------------------------------------------------------------*/
-/*------------------------------------------------------------*/
 //Route::patch('/shop', function () {return view('main.testHottel');})->name('testHottel');
 // Route::get('/hotel/shop', function () {return view('main.testHottel');})->name('hotel_home');
-Route::get('/hotel/shop', 'Shopping\ContentsController@home')->name('hotel_home');
-Route::get('/hotel/clients', 'Shopping\ClientController@index')->name('hotel_clients');
-Route::get('/hotel/clients/new', 'Shopping\ClientController@newClient')->name('hotel_new_client');
-Route::post('/hotel/clients/new', 'Shopping\ClientController@newClient')->name('hotel_create_client');
-Route::get('/hotel/clients/{client_id}', 'Shopping\ClientController@show')->name('hotel_show_client');
-Route::post('/hotel/clients/{client_id}', 'Shopping\ClientController@modify')->name('hotel_update_client');
-//----------------
-Route::get('/hotel/reservations/{client_id}', 'Shopping\RoomsController@checkAvailableRooms')->name('hotel_check_room');
-Route::post('/hotel/reservations/{client_id}', 'Shopping\RoomsController@checkAvailableRooms')->name('hotel_check_room');
+Route::middleware('auth')->group(function(){  //controlpannel need login
 
-Route::post('/hotel/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'Shopping\ReservationsController@bookRoom')
-->name('hotel_book_room');
- 
+    Route::get('/hotel/shop', 'Hottel\ContentsController@home')->name('hotel_home');
+    Route::get('/hotel/clients', 'Hottel\ClientController@index')->name('hotel_clients');
+    // Route::get('/hotel/clients', 'Hottel\ClientController@index')->name('hotel_clients')->middleware('auth');
+    Route::get('/hotel/clients/new', 'Hottel\ClientController@newClient')->name('hotel_new_client');
+    Route::post('/hotel/clients/new', 'Hottel\ClientController@newClient')->name('hotel_create_client');
+    Route::get('/hotel/clients/{client_id}', 'Hottel\ClientController@show')->name('hotel_show_client');
+    Route::post('/hotel/clients/{client_id}', 'Hottel\ClientController@modify')->name('hotel_update_client');
+    //----------------
+    Route::get('/hotel/reservations/{client_id}', 'Hottel\RoomsController@checkAvailableRooms')->name('hotel_check_room');
+    Route::post('/hotel/reservations/{client_id}', 'Hottel\RoomsController@checkAvailableRooms')->name('hotel_check_room');
+    
+    Route::get('/hotel/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'Hottel\ReservationsController@bookRoom')
+    ->name('hotel_book_room');
+
+    Route::get('export','Hottel\ClientController@export');
+    Route::get('upload','Hottel\ContentsController@upload')->name('upload');
+    Route::post('upload','Hottel\ContentsController@upload')->name('upload');
+});
+// Route::get('/hotel/shop', 'Hottel\ContentsController@home')->name('hotel_home');
+// Route::get('/hotel/clients', 'Hottel\ClientController@index')->name('hotel_clients');
+// // Route::get('/hotel/clients', 'Hottel\ClientController@index')->name('hotel_clients')->middleware('auth');
+// Route::get('/hotel/clients/new', 'Hottel\ClientController@newClient')->name('hotel_new_client');
+// Route::post('/hotel/clients/new', 'Hottel\ClientController@newClient')->name('hotel_create_client');
+// Route::get('/hotel/clients/{client_id}', 'Hottel\ClientController@show')->name('hotel_show_client');
+// Route::post('/hotel/clients/{client_id}', 'Hottel\ClientController@modify')->name('hotel_update_client');
+// //----------------
+// Route::get('/hotel/reservations/{client_id}', 'Hottel\RoomsController@checkAvailableRooms')->name('hotel_check_room');
+// Route::post('/hotel/reservations/{client_id}', 'Hottel\RoomsController@checkAvailableRooms')->name('hotel_check_room');
+
+// Route::get('/hotel/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'Hottel\ReservationsController@bookRoom')
+// ->name('hotel_book_room');
+//Hottel_Auth::routes();
+Route::get('/generate/password', function() { return bcrypt('123456789'); } )->name('d');
 /*------------------------------------------------------------*/
