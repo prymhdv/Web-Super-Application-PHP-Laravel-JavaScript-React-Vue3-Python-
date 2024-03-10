@@ -1,0 +1,77 @@
+
+.container .gallery_bx{
+    display: block;
+    border-radius: 20px;
+    box-shadow: 5px 3px 35px 5px rgba(0,0,0,0.14);
+    padding: 15px;
+    margin-top: 15px;
+
+}
+.container .gallery_bx h4{
+    font-family: "B Homa";
+    text-align: center;
+    color: #000000;
+    font-size: 22px;
+}
+/* (A) GALLERY WRAPPER */
+.gallery {
+  /* (A1) GRID LAYOUT - 3 IMAGES PER ROW */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px;
+
+  /* (A2) OPTIONAL WIDTH RESTRICT */
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* (B) GALLERY IMAGES */
+.gallery img {
+  /* (B1) DIMENSION */
+  width: 100%;
+  height: 180px; /* optional */
+  padding: 10px;
+
+  /* (B2) COLORS */
+  border: 1px solid #ddd;
+  background: #fff;
+
+  /* (B3) IMAGE RESIZE */
+  /* cover | contain | fill | scale-down */
+  object-fit: cover;
+}
+
+/* (C) ON SMALL SCREENS - 2 IMAGES PER ROW */
+@media only screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* (D) OPTIONAL ZOOM ON HOVER */
+.gallery img:hover {
+  z-index: 9;
+  transform: scale(1.3);
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  transition: transform ease 0.5s;
+}
+
+/* (E) FULLSCREEN MODE */
+.gallery img.full {
+  position: fixed;
+  top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100%;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.7);
+}
+.gallery img.full:hover {
+  z-index: 999;
+  transform: none;
+}
+
+/* (X) NOT IMPORTANT */
+* {
+  font-family: Arial, Helvetica, sans-serif,"B Titr";
+  box-sizing: border-box;
+}
