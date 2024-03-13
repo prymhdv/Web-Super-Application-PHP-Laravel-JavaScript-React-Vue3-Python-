@@ -1,0 +1,1 @@
+ require('../Vite/Vue3-app1/app.js') ;
