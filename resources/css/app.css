@@ -1,9 +1,0 @@
-
-
-@import "./Vite/React-app1/app.css"; /* Using a string */
-@import "./Vite/Vue3-app1/app.css"; /* Using a string */
-/* @import url("navigation.css"); Using a url */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
