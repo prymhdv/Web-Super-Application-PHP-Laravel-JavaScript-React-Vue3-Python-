@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Hottel\Auth as Hottel_Auth;
+ 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,24 +21,20 @@ use App\Http\Controllers\Hottel\Auth as Hottel_Auth;
 /*------------------------------------------------------------*/
 //                          main
 /*------------------------------------------------------------*/
-Route::get('/', function () {
-    return view('main.index2');
-})->name('main.index2');
-Route::get('Products', function () {
-    return view('Products.index');
-})->name('Products.index');
+Route::get('/', function ()         {   return view('main.index2');})->name('main.index2');
+Route::get('Products', function ()  {   return view('Products.index');})->name('Products.index');
 /*------------------------------------------------------------*/
-Route::get('testJS', function () {   return view('main.testJS');})->name('testJS');
-Route::get('VueJs', function () {   return view('main.VueJs');})->name('VueJs');
+Route::get('bootstrap', function ()    {   return view('main.bootstrap');})->name('bootstrap');
+Route::get('testJS', function ()    {   return view('main.testJS');})->name('testJS');
+Route::get('VueJs', function ()     {   return view('main.VueJs');})->name('VueJs');
+Route::get('ReactJs', function ()   {   return view('main.ReactJs');})->name('ReactJs');
 /*------------------------------------------------------------*/
-Route::get('about', function () {
-    return view('other.about');
-})->name('other.about');
+Route::get('about', function ()     {   return view('other.about');})->name('other.about');
 /*------------------------------------------------------------*/
 //                          Blog
 /*------------------------------------------------------------*/
 Route::get('/blog', [
-    'uses' => 'PostController@getIndex',
+    'uses' => 'PostController@getBlog',
     'as' => 'blog.index'
 ]);
 
@@ -47,36 +49,36 @@ Route::get('post/{id}/like', [
 
 
 // Route::group(['prefix' => 'admin','middleware' => ['auth' ,'guest']], function () {
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'BlogPost', 'middleware' => ['auth']], function () {
     Route::get('', [
-        'uses' => 'PostController@getAdminIndex',
-        'as' => 'admin.index',
+        'uses' => 'PostController@getIndex',
+        'as' => 'BlogPost.index',
         // 'middleware' => 'auth'
     ]);
 
     Route::get('create', [
-        'uses' => 'PostController@getAdminCreate',
-        'as' => 'admin.create'
+        'uses' => 'PostController@getCreate',
+        'as' => 'BlogPost.create'
     ]);
 
     Route::post('create', [
-        'uses' => 'PostController@postAdminCreate',
-        'as' => 'admin.create'
+        'uses' => 'PostController@postCreate',
+        'as' => 'BlogPost.create'
     ]);
 
     Route::get('edit/{id}', [
-        'uses' => 'PostController@getAdminEdit',
-        'as' => 'admin.edit'
+        'uses' => 'PostController@getEdit',
+        'as' => 'BlogPost.edit'
     ]);
 
     Route::get('delete/{id}', [
-        'uses' => 'PostController@getAdminDelete',
-        'as' => 'admin.delete'
+        'uses' => 'PostController@getDelete',
+        'as' => 'BlogPost.delete'
     ]);
 
     Route::post('edit', [
-        'uses' => 'PostController@postAdminUpdate',
-        'as' => 'admin.update'
+        'uses' => 'PostController@postUpdate',
+        'as' => 'BlogPost.update'
     ]);
 });
 /*------------------------------------------------------------*/
@@ -150,6 +152,26 @@ Route::get('/generate/password', function() { return bcrypt('123456789'); } )->n
 /*------------------------------------------------------------*/
 Route::prefix('auth')->group(function(){
 
-    Route::post('/Login',LoginController::class);
+    Route::post('/Login2',LoginController::class);
 
 });
+
+
+/*------------------------------------------------------------*/
+//                          Vite Vue3 app2
+/*------------------------------------------------------------*/
+Route::get('/ViteVue3app2', 'HomeController@index');
+
+Route::any('/ViteVue3app2/spa/{any?}', 'SpaController@spa')->where(['any' => '.*']);
+
+Route::resource('project', 'ProjectController',['except' => ['create']]);
+Route::get('ViteVue3app2/projects/', 'ProjectController@projects');
+
+Route::resource('note', 'NoteController',['except' => ['create']]);
+Route::get('ViteVue3app2/notes/', 'NoteController@notes');
+
+Route::post('ViteVue3app2/contact', 'SpaController@addContact');
+Route::get('ViteVue3app2/contacts', 'SpaController@contacts');
+
+Route::get('ViteVue3app2/skills', 'SpaController@skills');
+Route::get('ViteVue3app2/languages', 'SpaController@languages');

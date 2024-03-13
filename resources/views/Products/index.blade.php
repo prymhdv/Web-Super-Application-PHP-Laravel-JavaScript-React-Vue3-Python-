@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-
+<div class="single_page1">
     <div class="container">
         <div class="row">
             <div class="page-content single_content">
@@ -57,7 +57,7 @@
                     <div class="side_bx">
                         <span class="title">دسته بندی</span>
                         <ul>
-                            <li><a href="#" class="site-btn2">  شیرآلات ساختمانی</a></li>
+                            <li><a href="#" class="site-btn2"> شیرآلات ساختمانی</a></li>
                             <li><a href="#" class="site-btn2">درب ضد سرقت</a></li>
                             <li><a href="#" class="site-btn2">هود سینک گاز فر</a></li>
                             <li><a href="#" class="site-btn2">آینه روشویی سنگی</a></li>
@@ -70,6 +70,6 @@
 
         </div>
     </div>
-    </div>
+</div>
 
 @endsection

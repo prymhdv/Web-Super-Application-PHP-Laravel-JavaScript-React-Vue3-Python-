@@ -7,7 +7,33 @@
 
      colorzilla.com/gradienr-editor/
     */
+.JStest {
+  
+  *
+  {  
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px  rgb(92, 67, 67); 
+    border-radius: 20px; 
+    background: rgba(239, 239, 239, 0.944);
+    text-align: center;
+    font-weight: 500;
+    padding: 5px;
+  }
+    box-shadow: 122px 0 103px 0 rgba(243, 243, 243, 0.1) ;
 
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* width: 40%; */
+      }
+      form{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
 @font-face {
     font-family: pryfont;
     src: url(../fonts/jmacscrl.eot);
@@ -23,8 +49,9 @@
     height: 100px;
     width: auto;
     background-color: #31077a;
-    box-shadow: 0px 0px 10px 20px rgba(243, 243, 243, 0.1) inset;
+   
     -webkit-box-shadow: 0px 0px 10px 20px rgba(255, 255, 255, 0.922) inset;
+    box-shadow: 0px 0px 10px 20px rgba(243, 243, 243, 0.1) inset;
 
     border-radius: 15px;
     /*box-shadow: 0px 0px 20px 20px white inset; */
@@ -38,15 +65,16 @@
     background-color: rgba(172, 29, 29, 0.6);
     background: -moz-linear-gradient(top, #1c9d6e, rgb(255, 255, 255, .1), #1c9d6e);
     background: -webkit-linear-gradient(circle, #1c9d6e, rgb(255, 255, 255, .1), #1c9d6e);
-    background: radial-gradient(circle, #1c9d6e, rgb(255, 255, 255, .1), #1c9d6e);
+    
     background: -o-radial-gradient(circle, #1c9d6e, rgb(255, 255, 255, .1), #1c9d6e);
     background: -ms-radial-gradient(circle, #1c9d6e, rgb(255, 255, 255, .1), #1c9d6e);
+    background: radial-gradient(circle, #1c9d6e, rgb(255, 255, 255, .1), #1c9d6e);
     box-shadow: 0px 0px 100px 20px rgba(243, 243, 243, 0.1) inset;
 
     /*box-shadow: 0px 0px 20px 20px white inset; */
     top: 0;
-    right: 90px;
-    left: 500px;
+    /*  right: 90px; */
+    /*  left: 500px; */
     display: block;
 
     /* border-width: 5px;
@@ -55,7 +83,7 @@
     border-radius: 30px 20px 15px 10px;
     /* border-top-left-radius: 20px;
     border-bottom-right-radius: 5px; */
-    margin: 10px;
+    /* margin: 10px; */
     /* border:20px solid red;
     border-image: url("ic_lock_airplane_mode_alpha.png") 50 50 50; */
 }
@@ -71,10 +99,11 @@
 
 .contetn2 {
     width: auto;
-    column-count: 3;
-    column-gap: 15px;
+   
     -moz-column-count: 3;
     -moz-column-gap: 15px;
+    column-count: 3;
+    column-gap: 15px;
     font-family: pryfont;
 }
 
@@ -163,16 +192,16 @@
     animation: rainbowBkgnd 5.6s;
 }
 
-@media all {
+/* @media all {
     .content {
         color: blue;
     }
-}
+} */
 
 @media screen and (min-width:500px) {
     .content {
         width: 500px;
-        float: right;
+        /* float: right; */
     }
 }
 
@@ -182,4 +211,6 @@
         font-size: 18px;
 
     }
+}
+
 }

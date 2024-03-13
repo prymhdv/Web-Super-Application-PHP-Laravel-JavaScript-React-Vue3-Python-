@@ -5,23 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Blog\Like;
 use App\Models\Blog\Post;
 use App\Models\Blog\Tag;
-use Auth;
-use Gate;
+ 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
-    public function getIndex()
+    public function getBlog()
     {   $posts = Post::orderBy('created_at', 'desc')->paginate(2); 
         //$posts = Post::orderBy('created_at', 'desc')->get();
         return view('blog.index', ['posts' => $posts]);
     }
 
-    public function getAdminIndex()
+    public function getIndex()
     {   
         // if(!Auth::check()){return redirect()->back();  }
         $posts = Post::orderBy('title', 'asc')->get();
-        return view('admin.index', ['posts' => $posts]);
+        return view('blog.admin.index', ['posts' => $posts]);
     }
 
     public function getPost($id)
@@ -38,13 +39,13 @@ class PostController extends Controller
         return redirect()->back();
     }
 
-    public function getAdminCreate()
+    public function getCreate()
     {
         $tags = Tag::all();
         return view('admin.create', ['tags' => $tags]);
     }
 
-    public function getAdminEdit($id)
+    public function getEdit($id)
     {    // if(!Auth::check()){return redirect()->back();  }
         $post = Post::find($id);
         if(Gate::denies('manipulate-post',$post))  
@@ -55,7 +56,7 @@ class PostController extends Controller
         return view('admin.edit', ['post' => $post, 'postId' => $id, 'tags' => $tags]);
     }
 
-    public function postAdminCreate(Request $request)
+    public function postCreate(Request $request)
     { // if(!Auth::check()){return redirect()->back();  }
         $this->validate($request, [
             'title' => 'required|min:5',
@@ -74,7 +75,7 @@ class PostController extends Controller
         return redirect()->route('admin.index')->with('info', 'Post created, Title is: ' . $request->input('title'));
     }
 
-    public function postAdminUpdate(Request $request)
+    public function postUpdate(Request $request)
     {    // if(!Auth::check()){return redirect()->back();  }
         $this->validate($request, [
             'title' => 'required|min:5',
@@ -94,7 +95,7 @@ class PostController extends Controller
         return redirect()->route('admin.index')->with('info', 'Post edited, new Title is: ' . $request->input('title'));
     }
 
-    public function getAdminDelete($id)
+    public function getDelete($id)
     {
         $post = Post::find($id);
         if(Gate::denies('manipulate-post',$post))  

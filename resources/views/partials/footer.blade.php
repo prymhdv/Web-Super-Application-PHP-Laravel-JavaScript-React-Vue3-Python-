@@ -1,6 +1,7 @@
+<footer>
+    <div class="Main_Footer">
 
-    <footer class="py-5">
-        <div class="footer_box">
+        <div class="footer_box  ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -49,15 +50,16 @@
                             <a href="#"><i></i></a>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="copy">
-                            <span> &copy; حقوق انتشار برای وین کسب محفوظ است.</span>
-                        </div>
-                    </div>
+
                 </div>
+
             </div>
 
         </div>
-    </footer>
-     
+        <div class="copy">
+            <span> &copy; حقوق انتشار برای ..... محفوظ است.</span>
+        </div>
 
+    </div>
+
+</footer>

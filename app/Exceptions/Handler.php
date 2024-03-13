@@ -63,7 +63,9 @@ class Handler extends ExceptionHandler
      */
     //Throwable
     public function register(): void
-    {  //MethodNotAllowedHttpException
+    {
+        $this->renderable(\ProtoneMedia\Splade\SpladeCore::exceptionHandler($this));
+  //MethodNotAllowedHttpException
         // $this->reportable(function ($e) {
         //     //
         // });

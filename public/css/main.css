@@ -1,0 +1,38 @@
+
+
+
+/* Errored */
+
+@import "./bootstrap-4.1.3-css/bootstrap.css"; 
+@import "./bootstrap-4.1.3-css/bootstrap.min.css"; 
+
+@import "../fonts/font-awesome.css";
+
+@import "./login.css";  
+
+@import "./Single.css"; 
+
+@import "./1b-gallery.css";     
+@import "./2b-caption-gallery.css"; 
+@import "./animated.css";   
+@import "./style.css";  
+
+@import "./Main_Header.css"; 
+@import "./Main_Footer.css";  
+
+@import "./JStest.css";   
+
+/*
+<link href="css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+
+<!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Single.css') }}">
+<link rel="stylesheet" href="{{ asset('css/1b-gallery.css') }}">
+<link rel="stylesheet" href="{{ asset('css/2b-caption-gallery.css') }}">
+<link rel="stylesheet" href="{{ asset('css/animated.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/JStest.css') }}"> --> */
+/* <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> --> */
+

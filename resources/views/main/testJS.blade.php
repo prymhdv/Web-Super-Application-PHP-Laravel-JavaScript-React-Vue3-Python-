@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
-<div>
-    <div class="container text-center">
+<div class="JStest">
+    <div class="container">
 
         <h1 id="jsTitle" draggable="true">-------------------Java Script Basic
             <span id="date">2024</span>-------------------<span id="insertlocation"></span>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="ltr">
                     <h1> custom video controls</h1>
-                    <video id="video" controls width=320 height=240 poster="media/VolumeDataAlongSurfaceExample_01.png" onloadedmetadata="setDuration()" ontimeupdate="updateTime()">
+                    <video  id="video" controls width=320 height=240 poster="media/VolumeDataAlongSurfaceExample_01.png" onloadedmetadata="setDuration()" ontimeupdate="updateTime()">
                         <source src="media/video.webm" type="video/webm" />
                         <!-- <source src="media/VolumeDataAlongSurfaceExample_01.png" type="photo"/> -->
                         this text should only apper when your browser dose not support video playback.

@@ -26,3 +26,9 @@ Route::prefix('V1')->group(function(){
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//|--------------------------------------------------------------------------
+//| API Routes
+//|--------------------------------------------------------------------------
+Route::get("/test-me", function () {
+    return 'Hello from Laravel!';
+});
