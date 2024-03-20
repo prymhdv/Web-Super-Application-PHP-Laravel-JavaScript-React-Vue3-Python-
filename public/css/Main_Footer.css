@@ -1,0 +1,130 @@
+/*---------------------------------------------*/
+/*                  Footer                     */
+/*---------------------------------------------*/
+.Main_Footer{
+    margin: 20px 20px;
+    /* *{ direction: rtl;} */
+    /* float: center; */
+    text-align: right;
+    *.div{float: right; }
+.footer_box{
+    background-color: #212121;
+    /* background-image: url(img/footer-bg.jpg); */
+      background-image: linear-gradient(269deg, rgba(69, 0, 217, 0.25) 0%, rgba(139, 93, 225, 0.39) 100%);
+    background-position: center center;
+    background-size:cover  ;
+    /* background-repeat: no-repeat; */
+    padding: 25px 0;
+    margin-bottom: 0;
+      font-family: "B Homa";
+      box-shadow:  2px 2.98256px 3.4564px rgba(0,0,0,0.1);
+      border: 1px  rgb(92, 67, 67); 
+      border-radius: 20px 20px 0 0; 
+  }
+  
+  .footer_box .footer-menu span.title{
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 10px;
+          color: #bbb;
+          position: relative;
+      font-family: "B Homa";
+  }
+  .footer_box .footer-menu span.title:before{
+          content: "";
+          position: absolute;
+          bottom: 1px;
+          right: 8px;
+          width: 5px;
+          height: 2px;
+          background-color: #212121;
+          z-index: 10;
+          padding: 1px;
+      font-family: "B Homa";
+  }
+  .footer_box .footer-menu span.title:after{
+          content: "";
+          position: absolute;
+          bottom: 1px;
+          right: 0;
+          width: 40px;
+          height: 2px;
+          background-color: #777;
+      font-family: "B Homa";
+  }
+  .footer_box .footer-menu ul li{
+          margin: 3px 0;
+          line-height: 1.5;
+  }
+  
+  .footer_box .footer-menu ul li a{
+         display: block;
+         color: #eee;
+         font-size: 13px;
+         position: relative;
+      padding: 3px 15px 3px 0;
+      font-family: "B Homa";
+  }
+  
+  .footer_box .footer-menu ul li a:before{
+          content: "";
+          position: absolute;
+          bottom: 13px;
+          right: 1px;
+          width: 4px;
+          height: 2px;
+          background-color: #999;
+          z-index: 10;
+          transition: all 0.3s ease;
+  }
+  .footer_box .footer-menu ul li a:hover:before{
+          content: "";
+          position: absolute;
+          bottom: 13px;
+          right: 1px;
+          width: 8px;
+          height: 2px;
+          background-color: #ffffff;
+          z-index: 10;
+          transition: all 0.3s ease;
+  }
+  .footer_box .footer-menu ul li a:hover{
+      color: orange;
+  }
+  .footer_box .desc_footer{
+         line-height: 2;
+         text-align: justify;
+         font-size: 13px;
+         color: #eee;
+      font-family: "B Homa";
+  }
+  .footer_box .desc_footer p{
+      font-family: "B Homa";
+  }
+   .copy{display: block;
+      text-align: center;
+      background-color: #999;
+      margin-bottom: 0;
+      border: 1px  rgb(92, 67, 67); 
+      border-radius: 0  0 20px 20px; 
+      height: 50px;
+     
+  }
+   .copy span{
+    display: block;
+     font-size: 18px;
+     text-align: center;
+     color: #fff;
+      font-family: "B Homa";
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  .copy span:hover{
+    transition: all 0.3s ease;
+    font-size: 28px;padding: 2px;
+  }
+
+}
+  /*---------------------------------------------*/
+  /*                  Footer                     */
+  /*---------------------------------------------*/
