@@ -1,0 +1,5 @@
+// createApp({
+//     components: {
+//         VueSchool,
+//     }
+// }).mount('#Test02');
