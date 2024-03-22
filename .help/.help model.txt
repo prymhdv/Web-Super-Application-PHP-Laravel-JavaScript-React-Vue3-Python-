@@ -1,0 +1,5 @@
+php artisan make:model
+inter name
+...other dependency making.. enter 1 all();
+php artisan make:model Task -s -m -f -r -p 
+php artisan make:model Task -a ====make all

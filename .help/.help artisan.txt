@@ -1,0 +1,58 @@
+ctrl+P search file vscode
+composer dump-autoload
+php artisan down  --off maintance mode
+
+php artisan up    --on  shown mode
+
+php artisan cache:clear  --free cache
+
+php artisan make:controller ClientController
+php artisan make:controller ContentsController
+php artisan make:controller ReservationsController
+php artisan make:controller RoomsController
+
+php artisan make:model client
+php artisan make:model Room -m    ---and make migrateion in folder database/migrate [. forbiden
+php artisan make:model Title
+php artisan make:model ReadOnlybase
+php artisan make:provider DummyServiceProvider
+php artisan route:list
+php artisan view:clear
+
+/*------------------------------------------------------------*/
+php artisan make:migration create_rooms_table --create=rooms
+
+php artisan cache:clear
+php artisan config:clear
+php artisan config:cache
+/*------------------------------------------------------------*/
+namespace App\Http\Controllers\Shopping;
+use Illuminate\Http\Request;
+use App\Models\Shopping\Title as Title;
+use App\Http\Controllers\Controller;
+class ClientController extends Controller
+
+Route::get('/shop','Shopping\ContentsController@index');
+Route::get('/clients','Shopping\ClientController@index');
+Route::get('/clients/new','Shopping\ClientController@newClient');
+Route::post('/clients/new','Shopping\ClientController@create');
+_______________________________
+
+web.php >>
+Route::get('/about',function(){
+
+$response_arr = [];
+$response_arr = ['author'] = 'BP';
+$response_arr = ['version'] = '0.1.1';
+return $response_arr;
+
+//return '<h2>Hello php Laravel</h3>';
+});
+
+Route::get('/home',function(){
+	$data = [];
+	$data['version'] = '0.1.1';
+	return view('welcome',$data);
+});
+_______________________________
+

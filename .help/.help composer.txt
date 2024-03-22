@@ -1,0 +1,2 @@
+composer dump-autoload --no-dev
+composer dump-autoload [ok when not deeding]

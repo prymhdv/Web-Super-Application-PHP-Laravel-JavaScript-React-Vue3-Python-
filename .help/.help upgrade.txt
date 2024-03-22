@@ -1,0 +1,24 @@
+delete vendor dir
+delete composer.lock 
+--------------------------------
+Problem 1
+    - Root composer.json requires php ^7.2.5 but your php version (8.3.4) does not satisfy that requirement.
+
+It's because in your project in composer.json file you have:
+
+
+"require": {
+    "php": ">=7.3",  <<<<ok >=*.*
+    .....
+},
+
+
+"require": {
+    "php": "^7.3||^8.0",
+    .....
+},
+--------------------------------
+php artisn
+>>>laravel verison
+>php artisan
+Laravel Framework 8.83.27

@@ -1,0 +1,3 @@
+download wm box 5
+vagrant
+vagrant box add laravel/homestead

@@ -1,0 +1,20 @@
+npm cache clean --force
+npm update express
+rm -rf node_modules
+rm package-lock.json
+npm install
+
+npm update vue-loader
+
+npm i vue-loader
+
+npm run watch
+
+php artisan breeze:install
+npm install && npm run build
+npm run dev   
+ G:\- Developer---/package.json
+x64 bit server
+
+
+npm install react@latest react-dom@latest

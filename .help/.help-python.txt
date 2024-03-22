@@ -1,0 +1,25 @@
+>python clear cach and reload windows!!!! close open >>ok
+{
+  "key": "",
+  "command": "python.clearWorkspaceInterpreter"
+}
+
+setup run by administrator ----use admin previlage
+install user local not romaining area--------install for all users neded
+---Path error___ -------------------------------------------------------
+command = C:\Users\Quarts\AppData\Local\Programs\Python\Python311\python.exe -m venv g:\Web PHP Laravel\Super Application OnWork\.venv
+-------------------------to
+ command = C:\Users\Quarts\AppData\Local\Programs\Python\Python311\python.exe -m venv g:\Web_PHP_Laravel\Super_Application_OnWork\.venv
+--------------------------------------------------------------------------------------
+ python -V
+python.exe -m pip install numpy
+c:\users\quarts\appdata\roaming\python\python312\site-packages
+C:\Users\Quarts\AppData\Roaming\Python\Python312
+
+copy sitePack
+
+vscode > 
+------------------------------------------Python: Create Environment
+------------------------------------------Python: Clear Workspace Interpreter Setting
+----------f it still fails, try installing the pre-release python extension. 
+------------------[solved]--run vscode as adminastor

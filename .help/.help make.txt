@@ -1,0 +1,10 @@
+php artisan make:resource TaskResource
+php artisan make:controller
+name
+Api/V1/CompleteTaskControler
+...-----------------------inter 2 or -i invokable ---------------------\
+just type name
+
+--------------------------------------------------
+php artisan make:controller Auth/LoginController -i
+php artisan make:request LoginRequest

@@ -1,0 +1,15 @@
+php --version
+git --version
+composer --version
+mysql -u root -p root
+
+
+VSC change default terminal
+>terminal:selectdefault Profile
+
+composer show symfony/process
+.after git clone make uper folder not inse
+
+....
+
+ctrl+space make use injected
